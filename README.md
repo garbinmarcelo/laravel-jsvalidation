@@ -39,7 +39,7 @@ Almost are validated in client-side using Javascript, but in some cases, the val
 Some Laravel validations are not implemented yet.
     
 - [Present][] 
-- [DateFormat][] rule don't support timezone format
+- [DateFormat][] ~~rule don't support timezone format~~ in testing phase, contributions are welcome.
 
 #### Getting started
 

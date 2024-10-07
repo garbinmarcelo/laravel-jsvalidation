@@ -13,6 +13,9 @@ import strlen from 'locutus/php/strings/strlen';
 import array_diff from 'locutus/php/array/array_diff';
 import strtotime from 'locutus/php/datetime/strtotime';
 import is_numeric from 'locutus/php/var/is_numeric';
+var dayjs= require('dayjs');
+var customParseFormat = require('dayjs/plugin/customParseFormat');
+dayjs.extend(customParseFormat);
 
 $.extend(true, laravelValidation, {
 
@@ -530,6 +533,18 @@ $.extend(true, laravelValidation, {
             }
 
             return validator.elementValue(element);
+        },
+
+        /**
+         * Validate if the date is valid based on the given format.
+         *
+         * @param {string} value - The date value to validate.
+         * @param {string} format - The format to validate against.
+         * @param {boolean} strict - Whether to use strict mode for validation.
+         * @returns {boolean} - Returns true if the date is valid, false otherwise.
+         */
+        dateIsValid: function (value, format, strict) {
+            return dayjs(value, format, true).isValid();
         }
     }
 });

@@ -679,7 +679,7 @@ $.extend(true, laravelValidation, {
          * @return {boolean}
          */
         DateFormat: function(value, element, params) {
-            return laravelValidation.helpers.parseTime(value,params[0])!==false;
+            return laravelValidation.helpers.dateIsValid(value, params[0], true);
         },
 
         /**

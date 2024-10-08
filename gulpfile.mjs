@@ -63,3 +63,5 @@ gulp.task('build', gulp.series(
         return deleteAsync(esBuildDir);
     }
 ));
+
+gulp.task('default', gulp.series('build'));
